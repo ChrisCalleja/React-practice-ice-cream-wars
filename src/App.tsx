@@ -1,24 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Ad from "./components/Ad";
+import AdDesigner from "./components/AdDesigner";
+import Header from "./components/Header";
+import Votes from "./components/Votes";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header user="Chirpus" />
+      <div className="ad-container">
+        <Ad flavor="Vanilla" fontSize={45} darkMode={true} />
+        <Ad flavor="Chocolate" fontSize={45} darkMode={false} />
+        <Ad flavor="Strawberry" fontSize={45} darkMode={true} />
+      </div>
+
+      <div className="container">
+        <AdDesigner />
+        <Votes />
+      </div>
     </div>
   );
 }
